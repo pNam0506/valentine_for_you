@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14/02/2568</title>
+    <link rel="icon" type="image/png" href="heart.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="เพลงรัก.MP3" type="audio/mpeg">
+    </audio>
+
+    <audio id="clickSound">
+        <source src="bubble-pop-293342.mp3" type="audio/mpeg">
+    </audio>
+    <div class="start">
+        <button id="playButton">💖 let's go 💖</button>
+    </div>
+    
+
+    <script>
+        var playButton = document.getElementById("playButton");
+        var clickSound = document.getElementById("clickSound");
+
+        playButton.addEventListener("click", function () {
+            clickSound.currentTime = 0; // เล่นเสียง pop
+            clickSound.play();
+
+            setTimeout(() => {
+                playButton.style.display = "none"; // ซ่อนปุ่มเมื่อเล่นเพลงแล้ว
+                window.location.href = "page_2.html";
+                
+            }, 1000); // หน่วงเวลาเพื่อให้เสียง pop ดังก่อน
+        });
+    </script>
+
+</body>
+</html>

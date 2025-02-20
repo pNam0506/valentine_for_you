@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14/02/2568</title>
+    <link rel="icon" type="image/png" href="heart.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="Contect1">
+        <img id="box" src="box.png" alt="Closed Box">
+    </div>
+    <div class="Contect2">
+        <img id="open_box" src="open-box.png" alt="Open Box" style="display:none;">
+    </div>
+    <audio id="clickSound_openBox" src="open-package-box-parcel-100334.mp3"></audio>
+
+    <div class="Contect3">
+        <img id="letter" src="postcard.png" style="display:none;">
+        <img id="gift" src="gift.png" style="display:none;">
+    </div>
+
+    <div class="Character">
+        <img id="girl" src="girl.png">
+    </div>
+    <div class="box_chat">
+       <p class="chat">ดูเหมือนว่าจะมีของขวัญมาส่งให้เธอน๊ะ ลองเเกะเยยมั้ย</p>
+    </div>
+
+    <div class="box_chat_2">
+        <p id="chat_2" style="display: none;">อุ๊ยมีจดหมายด้วย เขียนว่าอะไรกันน๊ะ</p>
+     </div>
+
+     <audio id="clickSound_openLetter" src="paper-landing-42033.mp3">
+     </audio>
+
+     <div id="message" style="display: none;">
+        
+        <p>ถึงคุณ ธนาธร รสหวาน ที่รักของเค้าา 
+            <br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สุขสันต์วันวาเลนไทน์นะงั้บบบ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ขอบคุณที่ยังอยู่เป็นวันวาเลนไทน์ของเค้าน้าา ขอบคุณที่ยังน่ารักเเละเอาใจใส่เค้ามะเปลี่ยนเยย<br>
+            เทอทำให้เค้ามีความสุขทุกครั้งที่ได้อยู่กับเทอ เเละที่เค้าชอบบอกว่าเค้ารู้สึกเป็นผู้หญิงที่โชคดีบ่อยๆ<br> 
+            เพราะเค้ารู้สึกอย่างงั้นจริงๆน๊ะ❤️ เค้ามะรู้ว่าวันข้างหน้าเราจะเป็นยังไง รู้เเค่ว่าตอนนี้เค้าอยากอยู่กับเทอ<br>
+            ไปอีก 1000 ปี เย้ยยยย ของขวัญชิ้นนี้เค้าประดิษขึ้นมาเองกับมือเยย เค้าหวังว่าเทอจาชอบนะงั้บ<br><br><br>
+        </p>
+        <p id="pinmanee">จาก ปิ่นมณี วัชรพัฒนกุล คนที่รักเทอที่ฉุดในโล๊กก</p>
+        <button id="close">ปิด</button>
+     </div>
+
+    <audio id="bgMusic" loop>
+        <source src="เพลงรัก.MP3" type="audio/mpeg">
+    </audio>
+
+    <div class="box_chat_3">
+        <p id="chat_3" style="display: none;">งั๊มๆๆ เทอจะชอบมั้ยน๊ะ ตื่นเต๊นๆๆ</p>
+     </div>
+
+    <div id="gift_message" style="display: none;">
+        <p>ว่างเปล่า</p>
+        <button id="close_gift">ปิด</button>
+    </div>
+
+    <div class="box_chat_4">
+        <p id="chat_4" style="display: none;">อ้าว!! ของขวัญหายไปไหนเเย้วง่ะ;-;</p>
+     </div>
+
+     <div class="box_chat_5" id="chat_5" style="display: none;">
+        <p id="chat_5">สงสัยเเอบอยู่เเน่เยย น้อนน่าจะเขินคนหล่อ😝</p>
+        <button id="next">></button>
+     </div>
+
+     <div class="box_chat_6" id="chat_6" style="display: none;">
+        <p id="chat_6" >ถ้างั้น เทออาจจาต้องปิดตาก่อง น้องถึงจาออกมาา</p>
+        <button id="next_2">></button>
+     </div>
+     <audio id="ding" src="ding-small-bell-sfx-233008.mp3"></audio>
+     <div class="box_chat_7" id="chat_7"  style="display: none;">
+        <p id="chat_7" >จนกว่าจาได้ยินเสียงติ๊ง เเบบนี๊ ค่อยลืมตาน๊ะ</p>
+        <button id="next_3">></button>
+     </div>
+
+     <div class="box_chat_8" id="chat_8"  style="display: none;">
+        <p id="chat_8" >งั้นก็ หลับตาเยยยย</p>
+
+     </div>
+
+     <div class="box_chat_9" id="chat_9"  style="display: none;">
+        <p id="chat_9" >เเต่นเเต๊นนนน น้อนออกมาเเน้วว<br>สุขสันต์วันวาเลนไทน์อีกรอบนะงั้บ เค้ารักเทอน๊ะ💖🌷</p>
+
+     </div>
+     
+
+    <script>
+        var audio = document.getElementById("bgMusic");
+        var OpenBox = document.getElementById("box");
+        var letter = document.getElementById("letter");  // แก้เป็น 'letter' 
+        var openBoxImage = document.getElementById("open_box");  // ใช้ 'open_box'
+        var clickSound_openBox = document.getElementById("clickSound_openBox");
+        var gift = document.getElementById("gift");
+        var chat_2 = document.getElementById("chat_2")
+        var message = document.getElementById("message")
+        var clickSound_openLetter = document.getElementById("clickSound_openLetter") 
+        var close = document.getElementById("close");
+        var chat_3 = document.getElementById("chat_3");
+        var gift_message = document.getElementById("gift_message") ;
+        var close_gift = document.getElementById("close_gift");
+        var chat_4 = document.getElementById("chat_4");
+        var chat_5 = document.getElementById("chat_5");
+        var chat_6 = document.getElementById("chat_6");
+        var chat_7 = document.getElementById("chat_7");
+        var next = document.getElementById("next");
+        var next_2 = document.getElementById("next_2");
+        var ding = document.getElementById("ding");
+        var next_3 = document.getElementById("next_3");
+        var chat_8 = document.getElementById("chat_8");
+        var chat_9 = document.getElementById("chat_9");
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("เพลงเริ่มเล่นอัตโนมัติ!");
+                }).catch(error => {
+                    console.log("Autoplay ถูกบล็อก! ต้องให้ผู้ใช้กดปุ่มก่อน");
+                });
+            }
+        });
+
+        OpenBox.addEventListener("click", function () {
+            clickSound_openBox.currentTime = 0; // เล่นเสียง pop
+            clickSound_openBox.play();
+
+            // ซ่อนกล่องที่ปิดและแสดงกล่องที่เปิด
+            OpenBox.style.display = "none";  // ซ่อนกล่องปิด
+            openBoxImage.style.display = "block";  // แสดงกล่องเปิด
+
+            // หน่วงเวลา 1 วินาทีเพื่อให้กล่องเปิดแสดงก่อน
+            setTimeout(() => {
+                letter.style.display = "block";  // แสดงข้อความ
+                gift.style.display = "block";    // แสดงของขวัญ
+                chat_2.style.display = "block";  // แสดงข้อความที่ 2
+            }, 1000);
+        });
+
+        letter.addEventListener("click", function () {
+            clickSound_openLetter.currentTime = 2.7;
+            clickSound_openLetter.play();
+
+            letter.style.display = "none";
+            message.style.display = "block";
+        });
+
+        close.addEventListener("click", function(){
+            message.style.display = "none";
+            letter.style.display = "block";  // แสดงข้อความ
+            gift.style.display = "block";    // แสดงของขวัญ
+            chat_3.style.display = "block";
+        })
+        gift.addEventListener("click", function(){
+            gift.style.display = "none";
+            gift_message.style.display = "block";
+            chat_4.style.display = "block";
+        })
+        close_gift.addEventListener("click", function(){
+            message.style.display = "none";
+            gift_message.style.display = "none";
+            letter.style.display = "block";  // แสดงข้อความ
+            gift.style.display = "block";    // แสดงของขวัญ
+            chat_5.style.display = "block";
+
+          
+        })
+     
+        next.addEventListener("click", function(){
+            chat_6.style.display = "block";
+        })
+
+        next_2.addEventListener("click", function(){
+            
+            setTimeout(() =>{
+            ding.currentTime = 0;
+            ding.play();
+
+                chat_7.style.display = "block";
+            },1000);
+            
+        })
+        next_3.addEventListener("click", function(){
+            chat_8.style.display = "block";
+
+            setTimeout(() =>{
+            ding.currentTime = 0;
+            ding.play();
+            next_3.style.display = "none";
+            chat_9.style.display = "block";
+               
+            },10000);
+            
+        })
+
+
+    </script>
+
+</body>
+</html>

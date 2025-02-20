@@ -1,0 +1,346 @@
+body {
+    background: rgb(255, 225, 230);
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}
+
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start button {
+    border-radius: 10px;
+}
+
+.Contect1 #box{
+    position: absolute;
+    top: 10%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 35%;                /* ตั้งตำแหน่งให้อยู่กลางแนวนอน */
+    height: 400px;
+    width: 400px;
+    transform: translate(-50%, -50%);  /* ย้ายให้กลางพอดี */
+    opacity: 0; /* เริ่มต้นให้กล่องไม่เห็น */
+    animation: slideIn 1s ease-in-out forwards; /* ใช้แอนิเมชัน slideIn */
+}
+
+/* @keyframes สำหรับแอนิเมชัน */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px); /* เริ่มต้นที่ตำแหน่งต่ำกว่า */
+        opacity: 0; /* เริ่มต้นไม่เห็น */
+    }
+    100% {
+        transform: translateY(0); /* เลื่อนขึ้นไปที่ตำแหน่งเดิม */
+        opacity: 1; /* ทำให้กล่องมองเห็น */
+    }
+}
+
+.Character{
+    position: absolute;
+    top: 80%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 10%;
+}
+.Character #girl{
+    height: 100px;
+    width: 100px;
+}
+
+.box_chat {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat .chat {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* ขยายข้อความจนเต็ม */
+    }
+}
+
+.Contect2 #open_box{
+    position: absolute;
+    top: 10%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 35%;                /* ตั้งตำแหน่งให้อยู่กลางแนวนอน */
+    height: 400px;
+    width: 400px;
+    transform: translate(-50%, -50%);  /* ย้ายให้กลางพอดี */
+    animation: bounceUp 0.6s ease-out forwards; /* ใช้แอนิเมชัน bounceUp */
+}
+
+@keyframes bounceUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-15px); /* เลื่อนขึ้นไปเล็กน้อย */
+        opacity: 1; /* ทำให้กล่องมองเห็น */
+    }
+    70% {
+        transform: translateY(0); /* กลับมาที่ตำแหน่งปกติ */
+        opacity: 1; /* ทำให้กล่องมองเห็น */
+    }
+    100% {
+        transform: translateY(0); /* กลับมาที่ตำแหน่งปกติ */
+        opacity: 0;
+    }
+}
+
+.Contect3 {
+    position: absolute;
+    top: 20%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 30%;            /* ตั้งตำแหน่งให้อยู่กลางแนวนอน */
+    display: grid;
+    grid-template-rows: 1fr;  /* 1 แถว */
+    grid-template-columns: 1fr 1fr;  /* 2 คอลัมน์ */
+    
+}
+
+.Contect3 img{
+    height: 300px;
+    width: 300px;
+}
+
+.box_chat_2 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_2 #chat_2 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* ขยายข้อความจนเต็ม */
+    }
+}
+
+#message{
+    position: absolute;
+    top: -3%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 25%; 
+    width: 800px;
+    margin-top: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#message p{
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    left: 40px;
+}
+
+.box_chat_3 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_3 #chat_3 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+#gift_message{
+    position: absolute;
+    top: 2%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 25%; 
+    width: 800px;
+    margin-top: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.74);
+    
+}
+#gift_message p{
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    left: 40px;
+}
+
+.box_chat_4 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_4 #chat_4 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+.box_chat_5 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_5 #chat_5 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+.box_chat_6 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_6 #chat_6 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+.box_chat_7 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_7 #chat_7 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+.box_chat_8 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_8 #chat_8 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
+
+.box_chat_9 {
+    position: absolute;
+    top: 70%;                 /* ตั้งตำแหน่งให้อยู่กลางแนวตั้ง */
+    left: 17%;
+    width: 500px;
+    margin-top: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+    
+}
+
+.box_chat_9 #chat_9 {
+    position: relative;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 40px;
+    width: 0;  /* เริ่มต้นด้วยความกว้าง 0 เพื่อซ่อนข้อความ */
+    animation: typing 10s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;  /* ใช้ cubic-bezier เพื่อความสมูท */
+}
